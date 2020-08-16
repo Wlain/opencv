@@ -30,3 +30,23 @@ cv::Mat BRG2GRAY(cv::Mat img)
     
     return out;
 }
+
+
+// Gray -> Binary
+cv::Mat Binarize(cv::Mat gray, int th)
+{
+    int width = gray.cols;
+    int height = gray.rows;
+    
+    cv::Mat out = cv::Mat::zeros(height, width, CV_8UC1);
+    
+    for (int y = 0; y < height; ++y)
+    {
+        for (int x = 0; x < width; ++x)
+        {
+            // Binarize
+            out.at<uchar>(y, x) = (gray.at<uchar>(y, x) > th) ? 255 : 0;
+        }
+    }
+    return out;
+}

@@ -11,6 +11,7 @@
 // exterm
 extern cv::Mat channel_swap(cv::Mat img);
 extern cv::Mat BRG2GRAY(cv::Mat img);
+extern cv::Mat Binarize(cv::Mat img, int th);
 
 
 int main(int argc, const char * argv[]) {
@@ -18,10 +19,12 @@ int main(int argc, const char * argv[]) {
     cv::Mat img = cv::imread("/Users/william/git/learning/opencv_learning/opencv_demo/res/test.jpg", cv::IMREAD_COLOR);//载入
     
     // channel swap
-    cv::Mat out = channel_swap(img);
-    // gray
+    // cv::Mat out = channel_swap(img);
+    // BGR -> Gray
     cv::Mat gray = BRG2GRAY(img);
-    cv::imshow("gray", gray);
+    // Gray -> Binary
+    cv::Mat out = Binarize(gray, 128);
+    cv::imshow("Binary", out);
     cv::waitKey(0);//等待
     cv::destroyAllWindows();
     return 0;

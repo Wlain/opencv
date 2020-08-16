@@ -121,6 +121,7 @@
 		3D054F6E24E96EE0004762D1 /* libopencv_features2d.4.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D054EFE24E96EE0004762D1 /* libopencv_features2d.4.3.0.dylib */; };
 		3D054F6F24E96EE0004762D1 /* libopencv_flann.4.3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D054EFF24E96EE0004762D1 /* libopencv_flann.4.3.0.dylib */; };
 		3D054F7524E9728C004762D1 /* channel_swap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D054F7324E9728C004762D1 /* channel_swap.cpp */; };
+		3D054F7924E981A2004762D1 /* bgr2gray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3D054F7724E981A2004762D1 /* bgr2gray.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -253,6 +254,7 @@
 		3D054EFF24E96EE0004762D1 /* libopencv_flann.4.3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libopencv_flann.4.3.0.dylib; path = ../../../../../usr/local/Cellar/opencv/4.3.0_5/lib/libopencv_flann.4.3.0.dylib; sourceTree = "<group>"; };
 		3D054F7324E9728C004762D1 /* channel_swap.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = channel_swap.cpp; sourceTree = "<group>"; };
 		3D054F7624E973AE004762D1 /* base.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = base.h; sourceTree = "<group>"; };
+		3D054F7724E981A2004762D1 /* bgr2gray.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = bgr2gray.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -400,6 +402,7 @@
 			children = (
 				3D054E8624E96BDA004762D1 /* main.cpp */,
 				3D054F7324E9728C004762D1 /* channel_swap.cpp */,
+				3D054F7724E981A2004762D1 /* bgr2gray.cpp */,
 				3D054F7624E973AE004762D1 /* base.h */,
 			);
 			path = opencv_demo;
@@ -583,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D054E8724E96BDA004762D1 /* main.cpp in Sources */,
+				3D054F7924E981A2004762D1 /* bgr2gray.cpp in Sources */,
 				3D054F7524E9728C004762D1 /* channel_swap.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

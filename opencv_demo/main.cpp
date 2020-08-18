@@ -12,6 +12,7 @@
 extern cv::Mat channel_swap(cv::Mat img);
 extern cv::Mat BRG2GRAY(cv::Mat img);
 extern cv::Mat Binarize(cv::Mat img, int th);
+extern cv::Mat Binarize_Otsu(cv::Mat gray);
 
 
 int main(int argc, const char * argv[]) {
@@ -23,7 +24,7 @@ int main(int argc, const char * argv[]) {
     // BGR -> Gray
     cv::Mat gray = BRG2GRAY(img);
     // Gray -> Binary
-    cv::Mat out = Binarize(gray, 128);
+    cv::Mat out = Binarize_Otsu(gray);
     cv::imshow("Binary", out);
     cv::waitKey(0);//等待
     cv::destroyAllWindows();

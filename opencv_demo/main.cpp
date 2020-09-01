@@ -16,6 +16,7 @@ extern cv::Mat Binarize_Otsu(cv::Mat gray);
 extern cv::Mat BGR2HSV(cv::Mat img);
 extern cv::Mat HSV2BGR(cv::Mat hsv);
 extern cv::Mat inverse_hue(cv::Mat hsv);
+extern cv::Mat decrease_color(cv::Mat img);
 
 
 
@@ -29,10 +30,11 @@ int main(int argc, const char * argv[]) {
     // cv::Mat gray = BRG2GRAY(img);
     // Gray -> Binary
     // cv::Mat out = Binarize_Otsu(gray);
-    cv::Mat hsv = BGR2HSV(img);
-    hsv = inverse_hue(hsv);
-    cv::Mat out = HSV2BGR(hsv);
-    cv::imshow("Binary", out);
+    // cv::Mat hsv = BGR2HSV(img);
+    // hsv = inverse_hue(hsv);
+    cv::Mat out = decrease_color(img);
+    cv::namedWindow("decrease_color_test", cv::WINDOW_AUTOSIZE);
+    cv::imshow("decrease_color_test", out);
     cv::waitKey(0);//等待
     cv::destroyAllWindows();
     return 0;

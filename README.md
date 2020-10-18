@@ -90,12 +90,11 @@ $$
 x\text{val}=\begin{cases}32& (0 \leq \text{var} <  64)\\96& (64\leq \text{var}<128)\\160&(128\leq \text{var}<192)\\224&(192\leq \text{var}<256)\end{cases}
 $$
 
-
-​				
-​										
 ​						
 
+### **问题七：平均池化**
 
-
-
-
+将图片按照固定大小网格分割，网格内的像素取值网格内所有像素的平均值。我们将这种把图片使用均等大小网格分割，并求网格内代表值的操作称为池化（pooling），池化操作是**卷积神经网络（Convolutional Neural Network）**中重要的图像处理方式，平均实话按照下式定义：
+$$
+v=\frac{1}{|R|}\  \sum\limits_{i=1}^R\ v_iv=\frac{1}{|R|}\  \sum\limits_{i=1}^R\ v_i
+$$

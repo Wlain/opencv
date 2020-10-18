@@ -18,6 +18,7 @@ extern cv::Mat HSV2BGR(cv::Mat hsv);
 extern cv::Mat inverse_hue(cv::Mat hsv);
 extern cv::Mat decrease_color(cv::Mat img);
 extern cv::Mat average_pooling(cv::Mat img);
+extern cv::Mat max_pooling(cv::Mat img);
 
 
 
@@ -34,9 +35,9 @@ int main(int argc, const char * argv[]) {
     // cv::Mat hsv = BGR2HSV(img);
     // hsv = inverse_hue(hsv);
     // cv::Mat out = decrease_color(img);
-    cv::Mat out = average_pooling(img);
-    cv::namedWindow("average_pooling_color_test", cv::WINDOW_AUTOSIZE);
-    cv::imshow("average_pooling_color_test", out);
+    cv::Mat out = max_pooling(img);
+    cv::namedWindow("max_pooling_color_test", cv::WINDOW_AUTOSIZE);
+    cv::imshow("max_pooling_color_test", out);
     cv::waitKey(0);//等待
     cv::destroyAllWindows();
     return 0;

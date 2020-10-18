@@ -55,4 +55,44 @@ cv::Mat average_pooling(cv::Mat img)
 }
 
 
+cv::Mat max_pooling(cv::Mat img)
+{
+    int height  = img.rows;
+    int width   = img.cols;
+    int channel = img.channels();
+    
+        // prepare output
+    cv::Mat out = cv::Mat::zeros(height, width, CV_8UC3);
+    
+    int r = 10;
+    double v = 0;
+    
+    for (int y = 0; y < height; y += r)
+    {
+        for (int x = 0; x < width; x += r)
+        {
+            for (int c = 0; c < channel; ++c)
+            {
+                v = 0;
+                for (int dy = 0; dy < r; ++dy)
+                {
+                    for (int dx = 0; dx < r; ++dx)
+                    {
+                        v = fmaxl(img.at<cv::Vec3b>(y + dy, x + dx)[c], v);
+                    }
+                }
+                for (int dy = 0; dy < r; ++dy)
+                {
+                    for (int dx = 0; dx < r; ++dx)
+                    {
+                        out.at<cv::Vec3b>(y + dy, x + dx)[c] = (uchar)v;
+                    }
+                }
+            }
+        }
+    }
+    return out;
+}
+
+
 

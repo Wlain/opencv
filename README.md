@@ -98,3 +98,13 @@ $$
 $$
 v=\frac{1}{|R|}\  \sum\limits_{i=1}^R\ v_iv=\frac{1}{|R|}\  \sum\limits_{i=1}^R\ v_i
 $$
+
+
+![image-20201018173634197](/Users/william/Library/Application Support/typora-user-images/image-20201018173634197.png)
+
+### 问题八：最大池化
+
+网格内的值不取平均值，而是去网格内的最大值进行池化操作。
+
+![image-20201018173609806](/Users/william/Library/Application Support/typora-user-images/image-20201018173609806.png)
+

@@ -127,3 +127,11 @@ $$
 
 ![image-20201018191627848](/Users/william/Library/Application Support/typora-user-images/image-20201018191627848.png)
 
+### 问题十：中值滤波（Median Filter）
+
+使用中值滤波器（3 * 3 大小）来对图像进行降噪吧！
+
+中值滤波器是一种可以使图像平滑的滤波器，这种滤波器用滤波器范围内（这里是9 x 9）像素点的中值进行滤波，延续采用Zero Padding。
+
+![image-20201018193438151](/Users/william/Library/Application Support/typora-user-images/image-20201018193438151.png)
+

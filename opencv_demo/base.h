@@ -12,5 +12,6 @@
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
 #include <iostream>
+#include <math.h>
 
 #endif /* base_h */

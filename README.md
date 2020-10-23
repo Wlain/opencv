@@ -135,3 +135,9 @@ $$
 
 ![image-20201018193438151](/Users/william/Library/Application Support/typora-user-images/image-20201018193438151.png)
 
+### 问题十一：均值滤波（Mean Filter）
+
+均值滤波器使用网格像素内的平均值。
+
+![image-20201023220510477](/Users/william/Library/Application Support/typora-user-images/image-20201023220510477.png)
+

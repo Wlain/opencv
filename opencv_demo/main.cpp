@@ -21,6 +21,7 @@ extern cv::Mat average_pooling(cv::Mat img);
 extern cv::Mat max_pooling(cv::Mat img);
 extern cv::Mat gaussian_filter(cv::Mat img, double sigma, int kernel_size);
 extern cv::Mat median_filter(cv::Mat img, int kernel_size);
+extern cv::Mat mean_filter(cv::Mat img, int kernel_size);
 
 
 
@@ -37,9 +38,9 @@ int main(int argc, const char * argv[]) {
     // cv::Mat hsv = BGR2HSV(img);
     // hsv = inverse_hue(hsv);
     // cv::Mat out = decrease_color(img);
-    cv::Mat out = median_filter(img, 3);
-    cv::namedWindow("median_filter_test", cv::WINDOW_AUTOSIZE);
-    cv::imshow("median_filter_test", out);
+    cv::Mat out = mean_filter(img, 3);
+    cv::namedWindow("mean_filter_test", cv::WINDOW_AUTOSIZE);
+    cv::imshow("mean_filter_test", out);
     cv::waitKey(0);//等待
     cv::destroyAllWindows();
     return 0;

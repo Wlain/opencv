@@ -141,3 +141,14 @@ $$
 
 ![image-20201023220510477](/Users/william/Library/Application Support/typora-user-images/image-20201023220510477.png)
 
+###问题十二：运动模糊：Motion filter
+
+Motion filter取对角线方向的像素平均值，像下式这样定义：
+$$
+\left[\begin{matrix}\frac{1}{3}&0&0\\0&\frac{1}{3}&0\\0  & 0&  \frac{1}{3}\end{matrix}\right]
+$$
+
+
+![image-20201023230519418](/Users/william/Library/Application Support/typora-user-images/image-20201023230519418.png)				
+
+						

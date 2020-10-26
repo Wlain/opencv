@@ -284,3 +284,5 @@ $$
 $$
 K=\left[\begin{matrix}0&1&0\\1&-4&1\\0&1&0\end{matrix}\right]
 $$
+![image-20201027004308963](/Users/william/Library/Application Support/typora-user-images/image-20201027004308963.png)
+

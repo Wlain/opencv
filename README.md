@@ -191,7 +191,7 @@ $$
 
 ###问题十五：Sobel滤波器
 
-使用$3\times3$的差分滤波器来进行滤波
+使用$3\times3$的Sobe滤波器来进行滤波
 
 Sobel滤波器可以提取特定方向（纵向或横向）的边缘，滤波器按下式定义：
 
@@ -222,4 +222,38 @@ $$
 横向结果：
 
 ![image-20201027000045468](/Users/william/Library/Application Support/typora-user-images/image-20201027000045468.png)
+
+### 问题十六：Prewitt filter
+
+使用$3\times3$的Prewitt滤波器来进行滤波
+
+Prewitt滤波器是用于边缘检测的一种滤波器，算子如下：
+
+纵向算子：
+$$
+K=\left[
+\begin{matrix}
+-1&-1&-1\\
+0&0&0\\
+1&1&1
+\end{matrix}
+\right]
+$$
+横向算子：
+$$
+K=\left[
+\begin{matrix}
+-1&0&-1\\
+-1&0&1\\
+-1&0&1
+\end{matrix}
+\right]
+$$
+纵向结果：
+
+![image-20201027002323592](/Users/william/Library/Application Support/typora-user-images/image-20201027002323592.png)
+
+横向结果：
+
+![image-20201027002303229](/Users/william/Library/Application Support/typora-user-images/image-20201027002303229.png)
 

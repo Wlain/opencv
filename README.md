@@ -151,4 +151,7 @@ $$
 
 ![image-20201023230519418](/Users/william/Library/Application Support/typora-user-images/image-20201023230519418.png)				
 
-						
+## 问题十三：MAX-MIN滤波器
+
+min-max滤波器使用网格内像素的最大值和最小值的差值对网格内像素重新赋值。通常用于边缘检测。边缘检测用于检测图像中的线，想这样提取图中信息的操作称为**特征提取**。边缘检测通常在灰度图像中进行。
+

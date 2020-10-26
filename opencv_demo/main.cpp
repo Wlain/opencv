@@ -23,6 +23,7 @@ extern cv::Mat gaussian_filter(cv::Mat img, double sigma, int kernel_size);
 extern cv::Mat median_filter(cv::Mat img, int kernel_size);
 extern cv::Mat mean_filter(cv::Mat img, int kernel_size);
 extern cv::Mat motion_filter(cv::Mat img, int kernel_size);
+extern cv::Mat max_min_filter(cv::Mat img, int kernel_size);
 
 
 int main(int argc, const char * argv[]) {
@@ -32,15 +33,16 @@ int main(int argc, const char * argv[]) {
     // channel swap
     // cv::Mat out = channel_swap(img);
     // BGR -> Gray
-    // cv::Mat gray = BRG2GRAY(img);
+     cv::Mat gray = BRG2GRAY(img);
     // Gray -> Binary
     // cv::Mat out = Binarize_Otsu(gray);
     // cv::Mat hsv = BGR2HSV(img);
     // hsv = inverse_hue(hsv);
     // cv::Mat out = decrease_color(img);
-    cv::Mat out = motion_filter(img, 9);
-    cv::namedWindow("motion_filter_test", cv::WINDOW_AUTOSIZE);
-    cv::imshow("motion_filter_test", out);
+    
+    cv::Mat out = max_min_filter(gray, 3);
+//    cv::namedWindow("answer", cv::WINDOW_AUTOSIZE);
+    cv::imshow("answer", out);
     cv::waitKey(0);//等待
     cv::destroyAllWindows();
     return 0;

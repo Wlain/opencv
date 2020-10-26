@@ -154,3 +154,72 @@ $$
 ## 问题十三：MAX-MIN滤波器
 
 min-max滤波器使用网格内像素的最大值和最小值的差值对网格内像素重新赋值。通常用于边缘检测。边缘检测用于检测图像中的线，想这样提取图中信息的操作称为**特征提取**。边缘检测通常在灰度图像中进行。
+
+![image-20201026235657242](/Users/william/Library/Application Support/typora-user-images/image-20201026235657242.png)
+
+## 问题十四：Differential Filter
+
+使用$3\times3$的差分滤波器来进行滤波，差分滤波器对图像亮度急剧变化的边缘有提取效果，可以获得邻接像素的差值。
+
+纵向算子：
+$$
+K=\left[
+\begin{matrix}
+0&-1&0\\
+0&1&0\\
+0&0&0
+\end{matrix}
+\right]
+$$
+横向算子：
+$$
+K=\left[
+\begin{matrix}
+0&0&0\\
+-1&1&0\\
+0&0&0
+\end{matrix}
+\right]
+$$
+纵向结果：
+
+![image-20201026235821547](/Users/william/Library/Application Support/typora-user-images/image-20201026235821547.png)
+
+横向结果：
+
+![image-20201026235840715](/Users/william/Library/Application Support/typora-user-images/image-20201026235840715.png)
+
+###问题十五：Sobel滤波器
+
+使用$3\times3$的差分滤波器来进行滤波
+
+Sobel滤波器可以提取特定方向（纵向或横向）的边缘，滤波器按下式定义：
+
+纵向算子：
+$$
+K=\left[
+\begin{matrix}
+1&2&1\\
+0&0&0\\
+-1&-2&-1
+\end{matrix}
+\right]
+$$
+横向算子：
+$$
+K=\left[
+\begin{matrix}
+1&0&-1\\
+2&0&-2\\
+1&0&-1
+\end{matrix}
+\right]
+$$
+纵向结果：
+
+![image-20201027000019471](/Users/william/Library/Application Support/typora-user-images/image-20201027000019471.png)
+
+横向结果：
+
+![image-20201027000045468](/Users/william/Library/Application Support/typora-user-images/image-20201027000045468.png)
+

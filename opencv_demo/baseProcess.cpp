@@ -306,7 +306,7 @@ cv::Mat motion_filter(cv::Mat img, int kernel_size)
                 {
                     for (int dx = -pad; dx < pad + 1; ++dx)
                     {
-                        if (((dx + x) >= 0) && ((dy + y) >= 0) && ((dy + dx) < height && (x + dx) < width))
+                        if (((dy + y) >= 0) && ((dx + x) >= 0) && ((dx + x) < width) && ((dy + y) < height))
                         {
                             v += (double)img.at<cv::Vec3b>(y + dy, x + dx)[c] * kernel[dy + pad][dx + pad];
                         }
@@ -342,7 +342,7 @@ cv::Mat max_min_filter(cv::Mat img, int kernel_size)
             {
                 for (int dx = -pad; dx < pad + 1; ++dx)
                 {
-                    if (((dy + y) >= 0 && (dx + x) >= 0) && ((dx + x) < width && (dy + y) < height))
+                    if (((dy + y) >= 0) && ((dx + x) >= 0) && ((dx + x) < width) && ((dy + y) < height))
                     {
                         v = (double)img.at<uchar>(y + dy, x + dx);
                         if (v > vmax)
@@ -361,4 +361,47 @@ cv::Mat max_min_filter(cv::Mat img, int kernel_size)
     return out;
 }
 
-
+// diff filter
+cv::Mat diff_filter(cv::Mat img, int kernel_size, bool horizontal)
+{
+    int height = img.rows;
+    int width = img.cols;
+    int channel = img.channels();
+    
+    // prepare output
+    cv::Mat out = cv::Mat::zeros(height, width, CV_8UC1);
+    
+    // prepare kernel
+    double kernel[3][3] = {{0, -1, 0}, {0, 1, 0}, {0, 0, 0}};
+    
+    if (horizontal)
+    {
+        kernel[0][1] = 0;
+        kernel[1][0] = -1;
+    }
+    
+    int pad = floor(kernel_size / 2);
+    double v = 0;
+    // filtering
+    for (int y = 0; y < height; ++y)
+    {
+        for (int x = 0; x < width; ++x)
+        {
+            v = 0;
+            for (int dy = -pad; dy < pad + 1; ++dy)
+            {
+                for (int dx = -pad; dx < pad + 1; ++dx)
+                {
+                    if (((dy + y) >= 0) && ((dx + x) >= 0) && ((dy + y) <= height) && ((dx + x) <= width))
+                    {
+                        v += img.at<uchar>(y + dy, x + dx) * kernel[dy + pad][dx + pad];
+                    }
+                }
+            }
+            v = fmax(v, 0);
+            v = fmin(v, 255);
+            out.at<uchar>(y, x) = (uchar)v;
+        }
+    }
+    return out;
+}

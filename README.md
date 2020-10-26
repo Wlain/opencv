@@ -286,3 +286,13 @@ K=\left[\begin{matrix}0&1&0\\1&-4&1\\0&1&0\end{matrix}\right]
 $$
 ![image-20201027004308963](/Users/william/Library/Application Support/typora-user-images/image-20201027004308963.png)
 
+## 问题十八：Emboss滤波器
+
+使用Emboss滤波器来进行滤波，Emboss滤波器可以使物体轮廓更加清晰，具体算子如下：
+
+
+$$
+K=\left[\begin{matrix}-2&-1&0\\-1&1&1\\0&1&2\end{matrix}\right]
+$$
+![image-20201027004849353](/Users/william/Library/Application Support/typora-user-images/image-20201027004849353.png)
+

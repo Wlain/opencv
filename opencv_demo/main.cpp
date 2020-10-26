@@ -28,6 +28,7 @@ extern cv::Mat diff_filter(cv::Mat img, int kernel_size, bool horizontal);
 extern cv::Mat sobel_filter(cv::Mat img, int kernel_size, bool horizontal);
 extern cv::Mat prewitt_filter(cv::Mat img, int kernel_size, bool horizontal);
 extern cv::Mat laplacian_filter(cv::Mat img, int kernel_size);
+extern cv::Mat emboss_filter(cv::Mat img, int kernel_size);
 
 int main(int argc, const char * argv[]) {
     //read image
@@ -43,7 +44,7 @@ int main(int argc, const char * argv[]) {
     // hsv = inverse_hue(hsv);
     // cv::Mat out = decrease_color(img);
     
-    cv::Mat out = laplacian_filter(gray, 3);
+    cv::Mat out = emboss_filter(gray, 3);
 //   cv::namedWindow("answer", cv::WINDOW_AUTOSIZE);
     cv::imshow("answer", out);
     cv::waitKey(0);//等待

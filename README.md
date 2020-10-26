@@ -257,3 +257,30 @@ $$
 
 ![image-20201027002303229](/Users/william/Library/Application Support/typora-user-images/image-20201027002303229.png)
 
+### 问题十七、拉普拉斯滤波器（Laplacianl filter）
+
+使用拉普拉斯滤波器来进行滤波，拉普拉斯滤波器是对图像亮度进行二次微分而检测边缘的滤波器，由于数字图像的是离散的，x方向和y方向的一次微分分别按照以下式子计算。
+$$
+I_x(x,y)=\frac{I(x+1,y)-I(x,y)}{(x+1)-x}=I(x+1,y)-I(x,y)\\
+I_y(x,y) =\frac{I(x, y+1) - I(x,y)}{(y+1)-y}= I(x, y+1) - I(x,y)
+$$
+因此二次微分按照以下式子计算：
+$$
+\begin{align*}&I_{xx}(x,y) \\=& \frac{I_x(x,y) - I_x(x-1,y)}{(x+1)-x} \\=& I_x(x,y) - I_x(x-1,y)\\         =&[I(x+1, y) - I(x,y)] - [I(x, y) - I(x-1,y)]\\         =& I(x+1,y) - 2\  I(x,y) + I(x-1,y)\end{align*}
+$$
+同理：
+$$
+I_{yy}(x,y)=I(x,y+1)-2\  I(x,y)+I(x,y-1)
+$$
+特此，Laplacian 表达式如下：
+$$
+\begin{align*}
+&\nabla^2\ I(x,y)\\
+=&I_{xx}(x,y)+I_{yy}(x,y)\\
+=&I(x-1,y) + I(x,y-1) - 4 * I(x,y) + I(x+1,y) + I(x,y+1)
+\end{align*}
+$$
+如果把这个式子表示为卷积核是下面这样的：
+$$
+K=\left[\begin{matrix}0&1&0\\1&-4&1\\0&1&0\end{matrix}\right]
+$$
